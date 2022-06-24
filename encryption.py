@@ -70,21 +70,8 @@ def string_setup(string):
         for j in range(3):
             stringmat[i][j] = int(get_key(lowers, stringmat[i][j]) - 97)
     return stringmat, count
-def mat_mult(mat1, mat2):
-    m, n = 1, 3
-    p, q = 3, int(len(mat2[0]))
-    res = [[0] * q for i in range(m)]
-    if q == 1:
-        for i in range(m):
-            for j in range(q):
-                for k in range(n):
-                    res[i][j] += mat1[k] * mat2[k]
-    else:
-        for i in range(m):
-            for j in range(q):
-                for k in range(n):
-                    res[i][j] += mat1[k] * mat2[k][j]
-    return res
+
+
 def hill(text, key):
     key = np.matrix(key_setup(key))
     ciphertext = ''
